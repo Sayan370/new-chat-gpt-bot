@@ -1,4 +1,4 @@
-//const socket = io('https://service11carchat24test.chatlead.com',{path:'/gpt-bot/socket.io'});
+//const socket = io('https://service11Chatmetest.chatlead.com',{path:'/gpt-bot/socket.io'});
 const socket = io();
 
 const messageForm = document.getElementById("message-form");
@@ -19,7 +19,7 @@ printCurrentTime = () => {
 function displayMessage(role, message) {
     const div = `<div class="direct-chat-msg ${role === "user" ? 'right' : ''}">
   <div class="direct-chat-info clearfix">
-    <span class="direct-chat-name pull-${role === "user" ? 'right mr-10' : 'left'}">${role === "user" ? 'you' : 'Operator'}</span>
+    <span class="direct-chat-name pull-${role === "user" ? 'right mr-10' : 'left'}">${role === "user" ? 'you' : 'Bot'}</span>
   </div>
   <img class="direct-chat-img" src="${role === "user" ? userImg : assistantImg}" alt="message user image">
   <div class="direct-chat-text">
@@ -37,7 +37,7 @@ function clearLocalStorage() {
     socket.emit("removeLocalStorageData")
     setTimeout(() => {
         messages.innerHTML = '';
-        displayMessage('assistant', 'Hello, Welcome to CarChat24 Ford Tarpon dealership');
+        displayMessage('assistant', 'Hello, Welcome to Chatme');
         document.getElementById("chatMsg-box-container").style.display = "block";
     }, 200);
 }
