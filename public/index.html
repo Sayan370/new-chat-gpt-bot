@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div id="chat-container">
+    <div class="page-content page-container" id="page-content">
+      <div class="center">
+        <div class="row d-flex justify-content-center m-none">
+          <div class="col-md-8">
+            <center><i class="fa fa-times color-black"></i> Click This in chat window to clear all previous chat data.
+            </center>
+          </div>
+          <div class="col-md-4">
+            <div id="chatMsg-box-container" class="box box-warning direct-chat direct-chat-warning">
+              <div class="box-header with-border header">
+                <div class="gradient-setter"></div>
+                <img class="header-logo"
+                  src="https://static11carchat24test.chatlead.com/Uploads/Logos/defaultChatWindowlogo.png"
+                  alt="TestDev_Arpita">
+                <h3 class="box-title">CarChat24 Ford Tarpon</h3>
+                <p>Welcome To Our Live Chat</p>
+                <div class="box-tools pull-right">
+                  <!-- <span data-toggle="tooltip" title="" class="badge bg-yellow"
+                    data-original-title="3 New Messages">20</span> -->
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                      class="fa fa-bell-o color-black"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                      class="fa fa-minus color-black"></i>
+                  </button>
+                  <!-- <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title=""
+                    data-widget="chat-pane-toggle" data-original-title="Contacts">
+                    <i class="fa fa-comments"></i></button> -->
+                  <button type="button" class="btn btn-box-tool" onclick="clearLocalStorage()" data-widget="remove"><i
+                      class="fa fa-times color-black"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="box-body" id="msgBoxContainer">
+
+                <div class="direct-chat-messages" id="messages">
+                  <div class="direct-chat-msg">
+                    <div class="direct-chat-info clearfix">
+                      <span class="direct-chat-name pull-left">Operator</span>
+                    </div>
+
+                    <img class="direct-chat-img" src="https://img.icons8.com/office/36/000000/person-female.png"
+                      alt="message user image">
+
+                    <div class="direct-chat-text">
+                      Hello, Welcome to CarChat24 Ford Tarpon dealership
+                    </div>
+                    <span class="direct-chat-timestamp pull-right" id="txtTime"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-footer">
+                <div id="loader" class="loader lm-5">
+                  Typing
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <form action="#" method="post" id="message-form" class="d-flex form-container">
+                  <div class="input-group typing-area-container">
+                    <textarea required id="message-input" row="2" name="message" autofocus
+                      placeholder="Enter Your Question" class="msg-inp-box"></textarea>
+                  </div>
+                  <span class="input-group-btn">
+                    <!-- <button type="submit" class="btn btn-warning btn-flat"> -->
+                    <a href="#" class="btn-send" onclick="submitForm()">
+                      <i class="fa fa-send-o " aria-hidden="true"></i>
+                    </a>
+                    <!-- </button> -->
+                  </span>
+                </form>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <script src="https://unpkg.com/socket.io@4.6.1/client-dist/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

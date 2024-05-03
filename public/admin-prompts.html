@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Prompts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w-sm-100 {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            /* For mobile phones: */
+            .w-sm-100 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="d-flex mx-auto justify-content-center">
+            <div class="d-flex w-sm-100 flex-column">
+                <div class="card align-middle">
+                    <div class="card-header">
+                        <h5 class="card-title text-center">Train Your Gpt Bot</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="retForm" onsubmit="saveSystemMessage();return false;">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Prompts</label>
+                                <textarea id="txtPromptText" class="form-control" rows="10" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter Prompts"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">This is the system prompts it is used
+                                    to train the bot.</small>
+                            </div>
+                            <button type="submit" id="btnSave" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                        <div id="responseHolder" class="d-none">
+                            <div id="txtSuccessMsg" class="alert alert-success alert-dismissible fade hide"
+                                role="alert">
+                                <strong class="alert-heading">Congratulations</strong>
+                                <span>Prompt Saved SuccessFully</span>
+                            </div>
+                            <div id="txtErrorMsg" class="alert alert-danger alert-dismissible fade hide" role="alert">
+                                <strong class="alert-heading">Failed</strong>
+                                <span id="txtxErrText"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="admin-scripts.js"></script>
+
+</html>

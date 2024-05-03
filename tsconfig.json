@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": [
+      "DOM",
+      "ES5"
+    ],
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "esModuleInterop": true, 
+    "baseUrl": ".",
+  }
+}
